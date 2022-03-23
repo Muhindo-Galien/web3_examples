@@ -8,9 +8,11 @@ const account2 = '' // Your account address 2
 const privateKey1 = Buffer.from('YOUR_PRIVATE_KEY_1', 'hex')
 const privateKey2 = Buffer.from('YOUR_PRIVATE_KEY_2', 'hex')
 
+const contractAddress = '0x00000000219ab540356cBB839Cbe05303d7705Fa'
+
 web3.eth.getTransactionCount(account1, (err, txCount) => {
   // Build the transaction
-  const txObject = {
+  const txObject = { 
     nonce:    web3.utils.toHex(txCount),
     to:       account2,
     value:    web3.utils.toHex(web3.utils.toWei('0.1', 'ether')),
